@@ -49,7 +49,7 @@ const DifficultySelection = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center relative">
       <Profile />
-      
+
       <div className="w-full max-w-5xl px-4 sm:px-6">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-8 sm:mb-12">
           Select difficulty level
@@ -70,11 +70,10 @@ const DifficultySelection = () => {
           <button
             onClick={handleNext}
             disabled={!selectedDifficulty}
-            className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-              selectedDifficulty
+            className={`px-8 py-3 rounded-lg font-medium transition-colors ${selectedDifficulty
                 ? 'bg-gray-700 text-white hover:bg-gray-800'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-            }`}
+              }`}
           >
             Next
           </button>

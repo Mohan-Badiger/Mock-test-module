@@ -15,7 +15,7 @@ const ExamInterface = () => {
   const [answers, setAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(56); // seconds for current question
   const [showSummary, setShowSummary] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);//loading
   const [isTimeExpired, setIsTimeExpired] = useState(false); // Track if time has expired
   const navigatorRef = useRef(null);
   const currentQuestionRef = useRef(null);
