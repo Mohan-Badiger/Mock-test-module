@@ -1,0 +1,8 @@
+import { configureStore } from '@reduxjs/toolkit';
+import testReducer from './features/testSlice';
+
+export const store = configureStore({
+  reducer: {
+    tests: testReducer,
+  },
+});
