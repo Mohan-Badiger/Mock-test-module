@@ -28,7 +28,7 @@ if (process.env.DATABASE_URL || process.env.NEON_DATABASE_URL) {
   
   // Validate required environment variables for local DB
   if (!process.env.DB_PASSWORD) {
-    console.warn('\n⚠️  WARNING: DB_PASSWORD is not set in .env file');
+    console.warn('\n WARNING: DB_PASSWORD is not set in .env file');
     console.warn('Using local PostgreSQL with default settings.');
     console.warn('To use Neon/Cloud DB, set NEON_DATABASE_URL or DATABASE_URL in .env file');
     console.warn('Current .env location:', path.join(__dirname, '../.env'));
