@@ -218,7 +218,7 @@ app.get('/api', (req, res) => {
 });
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../mock-test-admin/dist')));
+// app.use(express.static(path.join(__dirname, '../mock-test-admin/dist')));
 
 // 404 handler for API routes
 app.use('/api/*', (req, res) => {
@@ -229,9 +229,9 @@ app.use('/api/*', (req, res) => {
 });
 
 // Catch-all handler for any request that doesn't match an API route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../mock-test-admin/dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../mock-test-admin/dist/index.html'));
+// });
 
 // Global error handler (must be last)
 app.use(errorHandler);
