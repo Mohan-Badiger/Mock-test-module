@@ -73,11 +73,9 @@ const QuestionManagement = () => {
           company_name: testRes.data?.company_name || '',
           role_position: testRes.data?.role_position || '',
           topic: testRes.data?.title || '',
-          topic: testRes.data?.title || '',
-          difficulty_level: '3',
+          //difficulty_level: '3',
           description: '',
           difficulty_level: String(diff.level || '3'),
-          description: '',
           count: 30,
           ai_provider: 'openai'
         };

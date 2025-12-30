@@ -97,10 +97,6 @@ const AIGenerator = () => {
         company_name: companyName,
         role_position: rolePosition,
         difficulty_level: parseInt(difficultyLevel),
-        topic,
-        company_name: companyName,
-        role_position: rolePosition,
-        difficulty_level: parseInt(difficultyLevel),
         ai_provider: aiProvider,
         description,
         count: parseInt(count)
