@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Production backend URL (Remote)
 const PRODUCTION_API_URL =
-  "https://ai-powered-skill-based-mock-tests-module.onrender.com/api";
+"https://mock-test-module-backend.onrender.com/api";
+// "https://ai-powered-skill-based-mock-tests-module.onrender.com/api";
 // Local backend URL
 const LOCAL_API_URL = "http://localhost:5000/api";
 
@@ -36,7 +37,8 @@ const testRemoteBackend = async () => {
   if (currentBaseURL === PRODUCTION_API_URL) {
     try {
       const response = await axios.get(
-        "https://ai-powered-skill-based-mock-tests-module.onrender.com/api/health",
+        "https://mock-test-module-backend.onrender.com/api",
+        // "https://ai-powered-skill-based-mock-tests-module.onrender.com/api/health",
         {
           timeout: 3000,
         }
