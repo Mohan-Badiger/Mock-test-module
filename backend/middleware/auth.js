@@ -1,33 +1,43 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const authenticate = (req, res, next) => {
   try {
-    const token = req.headers.authorization?.split(' ')[1] || req.headers['x-auth-token'];
+    const token =
+      req.headers.authorization?.split(" ")[1] || req.headers["x-auth-token"];
 
     if (!token) {
-      return res.status(401).json({ error: 'No token provided, authentication required' });
+      return res
+        .status(401)
+        .json({ error: "No token provided, authentication required" });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your_secret_key');
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET || "your_secret_key"
+    );
     req.user = decoded;
     next();
   } catch (error) {
-    if (error.name === 'JsonWebTokenError') {
-      return res.status(401).json({ error: 'Invalid token' });
+    if (error.name === "JsonWebTokenError") {
+      return res.status(401).json({ error: "Invalid token" });
     }
-    if (error.name === 'TokenExpiredError') {
-      return res.status(401).json({ error: 'Token expired' });
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).json({ error: "Token expired" });
     }
-    res.status(500).json({ error: 'Token verification failed' });
+    res.status(500).json({ error: "Token verification failed" });
   }
 };
 
 const optionalAuth = (req, res, next) => {
   try {
-    const token = req.headers.authorization?.split(' ')[1] || req.headers['x-auth-token'];
+    const token =
+      req.headers.authorization?.split(" ")[1] || req.headers["x-auth-token"];
 
     if (token) {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your_secret_key');
+      const decoded = jwt.verify(
+        token,
+        process.env.JWT_SECRET || "your_secret_key"
+      );
       req.user = decoded;
     }
     next();
@@ -39,7 +49,5 @@ const optionalAuth = (req, res, next) => {
 
 module.exports = {
   authenticate,
-  optionalAuth
+  optionalAuth,
 };
-
-
